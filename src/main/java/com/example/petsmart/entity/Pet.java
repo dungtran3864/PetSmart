@@ -1,4 +1,4 @@
-package com.example.petsmart.model;
+package com.example.petsmart.entity;
 
 import com.example.petsmart.constant.PetType;
 import lombok.*;
