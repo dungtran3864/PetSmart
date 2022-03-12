@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PetServiceImpl implements PetService {
 
@@ -15,7 +17,7 @@ public class PetServiceImpl implements PetService {
     private PetRepository petRepository;
 
     @Override
-    public HTTPGenericResponse create(CreatePetRequest createPetRequest) {
+    public HTTPGenericResponse createPet(CreatePetRequest createPetRequest) {
         Pet pet = Pet.builder().name(createPetRequest.getName()).age(createPetRequest.getAge()).petType(createPetRequest.getPetType()).build();
         try {
             petRepository.save(pet);
@@ -23,5 +25,10 @@ public class PetServiceImpl implements PetService {
         } catch (Exception exception) {
             throw new RuntimeException("Failed to create pet");
         }
+    }
+
+    @Override
+    public List<Pet> getPets() {
+        return petRepository.findAll();
     }
 }
