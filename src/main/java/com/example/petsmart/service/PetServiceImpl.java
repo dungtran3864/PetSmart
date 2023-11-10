@@ -4,6 +4,7 @@ import com.example.petsmart.domain.CreatePetRequest;
 import com.example.petsmart.domain.HTTPGenericResponse;
 import com.example.petsmart.entity.Pet;
 import com.example.petsmart.repository.PetRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -11,9 +12,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class PetServiceImpl implements PetService {
 
-    @Autowired
     private PetRepository petRepository;
 
     @Override
