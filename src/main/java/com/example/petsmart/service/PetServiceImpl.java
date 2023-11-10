@@ -5,7 +5,6 @@ import com.example.petsmart.domain.HTTPGenericResponse;
 import com.example.petsmart.entity.Pet;
 import com.example.petsmart.repository.PetRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
