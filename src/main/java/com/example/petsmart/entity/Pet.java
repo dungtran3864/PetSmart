@@ -1,6 +1,5 @@
 package com.example.petsmart.entity;
 
-import com.example.petsmart.constant.PetType;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -20,5 +19,5 @@ public class Pet {
     private Integer id;
     private String name;
     private Integer age;
-    private PetType petType;
+    private String petType;
 }

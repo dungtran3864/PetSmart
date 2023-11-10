@@ -9,7 +9,6 @@ import java.util.Optional;
 
 public interface PetService {
     HTTPGenericResponse createPet(CreatePetRequest createPetRequest);
-    List<Pet> getPets();
-
+    List<Pet> getPets(String petType);
     Optional<Pet> getPetById(String id);
 }
