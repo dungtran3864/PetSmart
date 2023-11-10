@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -30,5 +31,10 @@ public class PetServiceImpl implements PetService {
     @Override
     public List<Pet> getPets() {
         return petRepository.findAll();
+    }
+
+    @Override
+    public Optional<Pet> getPetById(String id) {
+        return petRepository.findById(Integer.valueOf(id));
     }
 }
