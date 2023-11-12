@@ -21,8 +21,10 @@ public class PetController {
     private PetService petService;
 
     @GetMapping
-    public ResponseEntity<List<Pet>> getPets(@RequestParam(required = false, name = "type") String petType) {
-        return new ResponseEntity<>(petService.getPets(petType), HttpStatus.OK);
+    public ResponseEntity<List<Pet>> getPets(
+            @RequestParam(required = false, name = "type") String petType,
+            @RequestParam(required = false) String name) {
+        return new ResponseEntity<>(petService.getPets(petType, name), HttpStatus.OK);
     }
 
     @GetMapping("/{petId}")

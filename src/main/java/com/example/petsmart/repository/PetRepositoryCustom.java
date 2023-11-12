@@ -5,5 +5,5 @@ import com.example.petsmart.entity.Pet;
 import java.util.List;
 
 public interface PetRepositoryCustom {
-    List<Pet> findPets(String petType);
+    List<Pet> findPets(String petType, String name);
 }

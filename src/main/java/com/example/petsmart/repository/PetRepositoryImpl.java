@@ -19,7 +19,7 @@ public class PetRepositoryImpl implements PetRepositoryCustom {
     EntityManager entityManager;
 
     @Override
-    public List<Pet> findPets(String petType) {
+    public List<Pet> findPets(String petType, String name) {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 
@@ -29,6 +29,10 @@ public class PetRepositoryImpl implements PetRepositoryCustom {
         if (petType != null && !petType.isEmpty()) {
             predicates.add(cb.equal(pet.get("petType"), petType));
         }
+        if (name != null && !name.isEmpty()) {
+            predicates.add(cb.equal(pet.get("name"), name));
+        }
+
         cq.where(predicates.toArray(new Predicate[0]));
 
         return entityManager.createQuery(cq).getResultList();

@@ -9,6 +9,6 @@ import java.util.Optional;
 
 public interface PetService {
     HTTPGenericResponse createPet(CreatePetRequest createPetRequest);
-    List<Pet> getPets(String petType);
+    List<Pet> getPets(String petType, String name);
     Optional<Pet> getPetById(String id);
 }
