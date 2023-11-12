@@ -2,7 +2,6 @@ package com.example.petsmart.repository;
 
 import com.example.petsmart.entity.Pet;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
