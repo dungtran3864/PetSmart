@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: petsmart-mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Tandung1998
+      MYSQL_DATABASE: petsmartdb
+
+volumes:
+  mysql-data:
